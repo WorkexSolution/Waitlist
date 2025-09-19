@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workex - Protect Your Work, Protect Yourself</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #135072;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 0 60px;
+            color: white;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #FFDC4C;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .headline {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .headline .highlight {
+            color: #34a5ed;
+        }
+
+        .subheadline {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-section {
+            background: white;
+            padding: 60px 0;
+            margin: 0 20px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            transform: translateY(-30px);
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .form-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #135072;
+        }
+
+        .form-subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #34a5ed;
+        }
+
+        .cta-button {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(45deg, #efa516 0%, #ff6b35 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(239, 165, 22, 0.3);
+            margin-top: 10px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(239, 165, 22, 0.4);
+        }
+
+        .social-proof {
+            background: #f8f9fa;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .social-proof h3 {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .feature h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #135072;
+        }
+
+        .feature p {
+            color: #666;
+        }
+
+        .footer {
+            background: #135072;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        @media (max-width: 768px) {
+            .headline {
+                font-size: 2.2rem;
+            }
+            
+            .hero {
+                padding: 60px 0 40px;
+            }
+            
+            .cta-section {
+                margin: 0 10px;
+                padding: 40px 20px;
+            }
+        }
+
+        .success-message {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .error-message {
+            display: none;
+            background: #f8d7da;
+            color: #721c24;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <h1 class="headline">Your <span class="highlight">Photos</span> Are Your <span class="highlight">Proof</span></h1>
+            <p class="subheadline">Stop worrying about job site disputes. Document your work and protect yourself with bulletproof records.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="cta-section">
+            <div class="form-container">
+                <h2 class="form-title">Join the Waitlist</h2>
+                <p class="form-subtitle">Be the first to get Workex when we launch</p>
+                
+                <div id="successMessage" class="success-message">
+                    Thanks! We'll notify you when Workex is ready.
+                </div>
+                
+                <div id="errorMessage" class="error-message">
+                    Something went wrong. Please try again.
+                </div>
+                
+                <form id="waitlistForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="trade">What's your trade?</label>
+                        <select id="trade" name="trade" required>
+                            <option value="">Select your trade</option>
+                            <option value="welder">Welder</option>
+                            <option value="electrician">Electrician</option>
+                            <option value="plumber">Plumber</option>
+                            <option value="carpenter">Carpenter</option>
+                            <option value="mechanic">Mechanic</option>
+                            <option value="fitter">Fitter</option>
+                            <option value="builder">Builder</option>
+                            <option value="roofer">Roofer</option>
+                            <option value="painter">Painter</option>
+                            <option value="tiler">Tiler</option>
+                            <option value="landscaper">Landscaper</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <button type="submit" class="cta-button">
+                        Get Started
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        // Store form submissions in memory (since localStorage isn't available)
+        let submissions = [];
+
+        document.getElementById('waitlistForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const submission = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                trade: formData.get('trade'),
+                phone: formData.get('phone') || '',
+                timestamp: new Date().toISOString()
+            };
+            
+            // Add to submissions array
+            submissions.push(submission);
+            
+            // Show success message
+            document.getElementById('successMessage').style.display = 'block';
+            document.getElementById('errorMessage').style.display = 'none';
+            
+            // Reset form
+            this.reset();
+            
+            // Log submission (you can see this in browser console)
+            console.log('New submission:', submission);
+            console.log('All submissions:', submissions);
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                document.getElementById('successMessage').style.display = 'none';
+            }, 5000);
+        });
+
+        // Simple analytics tracking
+        let pageViews = 1;
+        let formViews = 0;
+        let submissions_count = 0;
+
+        // Track form view when user scrolls to form
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && formViews === 0) {
+                    formViews = 1;
+                    console.log('Form viewed');
+                }
+            });
+        });
+
+        observer.observe(document.getElementById('waitlistForm'));
+    </script>
+</body>
+</html>
